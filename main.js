@@ -6,7 +6,8 @@ rightWristX = 0;
 rightWristY = 0;
 Scoreright = 0;
 Scoreleft = 0;
-Status = "";
+Status1 = "";
+Status2 = "";
 
 function preload()
 {
@@ -34,7 +35,21 @@ function draw()
     if(Scoreleft > 0.2)
     {
     circle(leftWristX,leftWristY,20);
-    InNumberleftWristY = Number(leftWristX);
+    song2.stop();
+    if(Status1 == false)
+    {
+        song1.play();
+    }
+    }
+
+    if(Scoreright > 0.2)
+    {
+    circle(leftWristX,leftWristY,20);
+    song1.stop();
+    if(Status2 == false)
+    {
+        song2.play();
+    }
     }
 }
 
