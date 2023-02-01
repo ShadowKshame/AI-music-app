@@ -31,7 +31,7 @@ function draw()
     image(video, 0, 0, 600, 500);
     fill("#FF0000");
     stroke("#FF0000");
-
+    Status1 = song1.isPlaying(); Status2 = song2.isPlaying();
     if(Scoreleft > 0.2)
     {
     circle(leftWristX,leftWristY,20);
@@ -39,16 +39,18 @@ function draw()
     if(Status1 == false)
     {
         song1.play();
+        document.getElementById("SongName").innerHTML = "Wanna Rock";
     }
     }
 
     if(Scoreright > 0.2)
     {
-    circle(leftWristX,leftWristY,20);
+    circle(rightWristX,rightWristY,20);
     song1.stop();
     if(Status2 == false)
     {
         song2.play();
+        document.getElementById("SongName").innerHTML = "Holiday";
     }
     }
 }
@@ -71,6 +73,7 @@ function gotPoses(results)
     {
         console.log(results);
         Scoreleft = results[0].pose.keypoints[9].score;
+        Scoreright = results[0].pose.keypoints[10].score;
         console.log("Scoreleft =" + Scoreleft);
         leftWristX = results[0].pose.leftWrist.x;
         leftWristY = results[0].pose.leftWrist.y;
