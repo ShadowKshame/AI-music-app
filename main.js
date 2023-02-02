@@ -31,7 +31,8 @@ function draw()
     image(video, 0, 0, 600, 500);
     fill("#FF0000");
     stroke("#FF0000");
-    Status1 = song1.isPlaying(); Status2 = song2.isPlaying();
+    Status1 = song1.isPlaying(); 
+    Status2 = song2.isPlaying();
     if(Scoreleft > 0.2)
     {
     circle(leftWristX,leftWristY,20);
@@ -39,7 +40,8 @@ function draw()
     if(Status1 == false)
     {
         song1.play();
-        document.getElementById("SongName").innerHTML = "Wanna Rock";
+        document.getElementById("SongName").innerHTML="Wanna Rock";
+        console.log(song1);
     }
     }
 
@@ -50,7 +52,8 @@ function draw()
     if(Status2 == false)
     {
         song2.play();
-        document.getElementById("SongName").innerHTML = "Holiday";
+        document.getElementById("SongName").innerHTML="Holiday";
+        console.log(song2);
     }
     }
 }
